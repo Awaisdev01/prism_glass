@@ -13,5 +13,5 @@ library;
 export 'src/controller.dart';
 export 'src/glass_style.dart';
 export 'src/host_api.dart';
-export 'src/liquid_glass_surface.dart';
+export 'src/prism_glass_surface.dart';
 export 'src/shader_glass.dart';

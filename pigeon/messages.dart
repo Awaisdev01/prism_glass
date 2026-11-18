@@ -7,13 +7,13 @@ import 'package:pigeon/pigeon.dart';
 
 @ConfigurePigeon(
   PigeonOptions(
-    dartPackageName: 'liquid_glass',
+    dartPackageName: 'prism_glass',
     dartOut: 'lib/src/messages.g.dart',
     kotlinOut:
-        'android/src/main/kotlin/dev/prism/liquid_glass/Messages.g.kt',
-    kotlinOptions: KotlinOptions(package: 'dev.prism.liquid_glass'),
+        'android/src/main/kotlin/dev/prism/glass_view/Messages.g.kt',
+    kotlinOptions: KotlinOptions(package: 'dev.prism.prism_glass'),
     swiftOut: [
-      'ios/liquid_glass/Sources/liquid_glass/Messages.g.swift',
+      'ios/prism_glass/Sources/prism_glass/Messages.g.swift',
     ],
   ),
 )
@@ -57,7 +57,7 @@ class HostInfo {
 }
 
 @HostApi()
-abstract class LiquidGlassApi {
+abstract class PrismGlassApi {
   /// Returns OS version and native-glass capability.
   HostInfo getHostInfo();
 }

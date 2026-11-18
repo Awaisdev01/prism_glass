@@ -43,7 +43,7 @@ class _ShaderLiquidGlassState extends State<ShaderLiquidGlass> {
     // prefix. Try both.
     FragmentProgram? program;
     for (final asset in const [
-      'packages/liquid_glass/shaders/glass.iplr',
+      'packages/prism_glass/shaders/glass.iplr',
       'shaders/glass.iplr',
     ]) {
       try {

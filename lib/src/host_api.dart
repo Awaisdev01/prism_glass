@@ -5,12 +5,12 @@
 import 'messages.g.dart';
 
 /// Dart-side access to the host's glass capability.
-class LiquidGlassHost {
-  LiquidGlassHost._();
+class PrismGlassHost {
+  PrismGlassHost._();
 
-  static final LiquidGlassHost instance = LiquidGlassHost._();
+  static final PrismGlassHost instance = PrismGlassHost._();
 
-  LiquidGlassApi? _api;
+  PrismGlassApi? _api;
   bool? _cached;
 
   /// Returns true when the host can render Apple's real Liquid Glass
@@ -20,7 +20,7 @@ class LiquidGlassHost {
     if (cached != null) {
       return cached;
     }
-    _api ??= LiquidGlassApi();
+    _api ??= PrismGlassApi();
     final info = await _api!.getHostInfo();
     _cached = info.supportsNativeGlass;
     return _cached!;

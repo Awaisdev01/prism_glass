@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/widgets.dart';
-import 'package:liquid_glass/liquid_glass.dart';
+import 'package:prism_glass/prism_glass.dart';
 
 void main() => runApp(const LiquidGlassExampleApp());
 
@@ -28,7 +28,7 @@ class GlassDemo extends StatelessWidget {
     return Container(
       color: const Color(0xFF0B0B0F),
       child: Center(
-        child: LiquidGlassSurface(
+        child: PrismGlassSurface(
           style: GlassStyle.regular,
           cornerRadius: 24,
           child: const Padding(

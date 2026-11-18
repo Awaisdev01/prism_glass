@@ -4,7 +4,7 @@
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:liquid_glass/liquid_glass.dart';
+import 'package:prism_glass/prism_glass.dart';
 
 void main() {
   test('GlassController serializes arguments', () {
@@ -21,16 +21,16 @@ void main() {
     expect(args['tintRed'], isNonZero);
   });
 
-  testWidgets('LiquidGlassSurface renders the fallback on non-iOS hosts', (
+  testWidgets('PrismGlassSurface renders the fallback on non-iOS hosts', (
     tester,
   ) async {
     await tester.pumpWidget(
-      const LiquidGlassSurface(
+      const PrismGlassSurface(
         cornerRadius: 16,
         child: SizedBox(width: 100, height: 50),
       ),
     );
     await tester.pump(const Duration(seconds: 1));
-    expect(find.byType(LiquidGlassSurface), findsOneWidget);
+    expect(find.byType(PrismGlassSurface), findsOneWidget);
   });
 }

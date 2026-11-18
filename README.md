@@ -1,10 +1,10 @@
-# liquid_glass
+# prism_glass
 
 Apple's **Liquid Glass** material for Flutter — the real `UIGlassEffect` on
 iOS 26+, a fragment-shader approximation everywhere else, one widget for all
 platforms.
 
-[![pub package](https://img.shields.io/pub/v/liquid_glass.svg)](https://pub.dev/packages/liquid_glass)
+[![pub package](https://img.shields.io/pub/v/prism_glass.svg)](https://pub.dev/packages/prism_glass)
 
 ## Why
 
@@ -22,16 +22,16 @@ and keeps a faithful shader fallback so your UI works everywhere.
 - **Universal fallback** — an Impeller fragment shader recreates the glass
   character (frost, rim light, micro-refraction) on Android, web, desktop,
   and iOS < 26.
-- **Single API** — `LiquidGlassSurface` transparently picks the right path.
+- **Single API** — `PrismGlassSurface` transparently picks the right path.
 - **Live control** — `GlassController` mutates style/tint/radius without
   rebuilding.
 
 ## Usage
 
 ```dart
-import 'package:liquid_glass/liquid_glass.dart';
+import 'package:prism_glass/prism_glass.dart';
 
-LiquidGlassSurface(
+PrismGlassSurface(
   style: GlassStyle.regular,
   interactive: true,          // native interactive glass on iOS 26+
   cornerRadius: 24,

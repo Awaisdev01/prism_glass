@@ -19,7 +19,7 @@ final class GlassPlatformView: NSObject, FlutterPlatformView {
     config = GlassConfig.fromArgs(args)
 
     channel = FlutterMethodChannel(
-      name: "liquid_glass/view_\(viewId)", binaryMessenger: messenger)
+      name: "prism_glass/view_\(viewId)", binaryMessenger: messenger)
 
     super.init()
     apply(config)
@@ -83,12 +83,12 @@ final class GlassViewFactory: NSObject, FlutterPlatformViewFactory {
 
   /// Routes `update` calls to the right surface.
   func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    guard call.method.hasPrefix("liquid_glass/view_") else {
+    guard call.method.hasPrefix("prism_glass/view_") else {
       result(FlutterMethodNotImplemented)
       return
     }
     let idString = call.method
-      .replacingOccurrences(of: "liquid_glass/view_", with: "")
+      .replacingOccurrences(of: "prism_glass/view_", with: "")
     guard let id = Int64(idString), let view = views[id] else {
       result(FlutterMethodNotImplemented)
       return
@@ -97,21 +97,21 @@ final class GlassViewFactory: NSObject, FlutterPlatformViewFactory {
   }
 }
 
-public class LiquidGlassPlugin: NSObject, FlutterPlugin, LiquidGlassApi {
+public class PrismGlassPlugin: NSObject, FlutterPlugin, PrismGlassApi {
   private var factory: GlassViewFactory?
 
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let instance = LiquidGlassPlugin()
-    LiquidGlassApiSetup.setUp(binaryMessenger: registrar.messenger(), api: instance)
+    let instance = PrismGlassPlugin()
+    PrismGlassApiSetup.setUp(binaryMessenger: registrar.messenger(), api: instance)
     if #available(iOS 26.0, *) {
       let glassFactory = GlassViewFactory(messenger: registrar.messenger())
       instance.factory = glassFactory
       registrar.register(
         glassFactory,
-        withId: "prism/liquid_glass")
+        withId: "prism/glass_view")
       // Method-channel router for per-view updates.
       let routerChannel = FlutterMethodChannel(
-        name: "liquid_glass/router", binaryMessenger: registrar.messenger())
+        name: "prism_glass/router", binaryMessenger: registrar.messenger())
       routerChannel.setMethodCallHandler { call, result in
         glassFactory.handle(call, result: result)
       }

@@ -35,7 +35,7 @@ class NativeGlassView extends StatelessWidget {
   Widget futureed() {
     // Platform views need UIKitView composition; content is drawn behind.
     return UiKitView(
-      viewType: 'prism/liquid_glass',
+      viewType: 'prism/glass_view',
       creationParams: <String, Object?>{
         'style': style == GlassStyle.clear ? 1 : 0,
         'interactive': interactive,

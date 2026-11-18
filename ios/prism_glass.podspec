@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint liquid_glass.podspec` to validate before publishing.
+# Run `pod lib lint prism_glass.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'liquid_glass'
+  s.name             = 'prism_glass'
   s.version          = '0.1.0'
   s.summary          = 'Apple Liquid Glass material for Flutter.'
   s.description      = <<-DESC
@@ -13,7 +13,7 @@ A new Flutter plugin project.
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'awaisdev5765' => 'awaisdev5765@users.noreply.github.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'liquid_glass/Sources/liquid_glass/**/*'
+  s.source_files = 'prism_glass/Sources/prism_glass/**/*'
   s.dependency 'Flutter'
   s.platform = :ios, '15.0'
 
@@ -25,5 +25,5 @@ A new Flutter plugin project.
   # required reason APIs, update the PrivacyInfo.xcprivacy file to describe your
   # plugin's privacy impact, and then uncomment this line. For more information,
   # see https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
-  # s.resource_bundles = {'liquid_glass_privacy' => ['liquid_glass/Sources/liquid_glass/PrivacyInfo.xcprivacy']}
+  # s.resource_bundles = {'prism_glass_privacy' => ['prism_glass/Sources/prism_glass/PrivacyInfo.xcprivacy']}
 end

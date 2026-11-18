@@ -282,11 +282,11 @@ class _PigeonCodec extends StandardMessageCodec {
   }
 }
 
-class LiquidGlassApi {
-  /// Constructor for [LiquidGlassApi]. The [binaryMessenger] named argument is
+class PrismGlassApi {
+  /// Constructor for [PrismGlassApi]. The [binaryMessenger] named argument is
   /// available for dependency injection. If it is left null, the default
   /// BinaryMessenger will be used which routes to the host platform.
-  LiquidGlassApi({
+  PrismGlassApi({
       BinaryMessenger? binaryMessenger, 
       String messageChannelSuffix = '', 
       })
@@ -301,7 +301,7 @@ class LiquidGlassApi {
 
   /// Returns OS version and native-glass capability.
   Future<HostInfo> getHostInfo() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.liquid_glass.LiquidGlassApi.getHostInfo$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName = 'dev.flutter.pigeon.prism_glass.PrismGlassApi.getHostInfo$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -333,7 +333,7 @@ abstract class GlassSurfaceCallbacks {
     messageChannelSuffix = messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
     {
       final pigeonVar_channel = BasicMessageChannel<Object?>(
-          'dev.flutter.pigeon.liquid_glass.GlassSurfaceCallbacks.onTap$messageChannelSuffix', pigeonChannelCodec,
+          'dev.flutter.pigeon.prism_glass.GlassSurfaceCallbacks.onTap$messageChannelSuffix', pigeonChannelCodec,
           binaryMessenger: binaryMessenger);
       if (api == null) {
         pigeonVar_channel.setMessageHandler(null);

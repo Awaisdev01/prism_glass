@@ -1,6 +1,6 @@
-# liquid_glass_example
+# prism_glass_example
 
-Demonstrates how to use the liquid_glass plugin.
+Demonstrates how to use the prism_glass plugin.
 
 ## Getting Started
 

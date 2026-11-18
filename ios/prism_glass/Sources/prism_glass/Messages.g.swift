@@ -355,19 +355,19 @@ class MessagesPigeonCodec: FlutterStandardMessageCodec, @unchecked Sendable {
 }
 
 /// Generated protocol from Pigeon that represents a handler of messages from Flutter.
-protocol LiquidGlassApi {
+protocol PrismGlassApi {
   /// Returns OS version and native-glass capability.
   func getHostInfo() throws -> HostInfo
 }
 
 /// Generated setup class from Pigeon to handle messages through the `binaryMessenger`.
-class LiquidGlassApiSetup {
+class PrismGlassApiSetup {
   static var codec: FlutterStandardMessageCodec { MessagesPigeonCodec.shared }
-  /// Sets up an instance of `LiquidGlassApi` to handle messages through the `binaryMessenger`.
-  static func setUp(binaryMessenger: FlutterBinaryMessenger, api: LiquidGlassApi?, messageChannelSuffix: String = "") {
+  /// Sets up an instance of `PrismGlassApi` to handle messages through the `binaryMessenger`.
+  static func setUp(binaryMessenger: FlutterBinaryMessenger, api: PrismGlassApi?, messageChannelSuffix: String = "") {
     let channelSuffix = messageChannelSuffix.count > 0 ? ".\(messageChannelSuffix)" : ""
     /// Returns OS version and native-glass capability.
-    let getHostInfoChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.liquid_glass.LiquidGlassApi.getHostInfo\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    let getHostInfoChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.prism_glass.PrismGlassApi.getHostInfo\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
     if let api = api {
       getHostInfoChannel.setMessageHandler { _, reply in
         do {
@@ -401,7 +401,7 @@ class GlassSurfaceCallbacks: GlassSurfaceCallbacksProtocol {
   /// Reports a tap that reached the native glass layer (interactive mode).
   @MainActor func onTap(x xArg: Double, y yArg: Double) async throws {
     return try await withCheckedThrowingContinuation { continuation in
-      let channelName: String = "dev.flutter.pigeon.liquid_glass.GlassSurfaceCallbacks.onTap\(messageChannelSuffix)"
+      let channelName: String = "dev.flutter.pigeon.prism_glass.GlassSurfaceCallbacks.onTap\(messageChannelSuffix)"
       let channel = FlutterBasicMessageChannel(name: channelName, binaryMessenger: binaryMessenger, codec: codec)
       channel.sendMessage([xArg, yArg] as [Any?]) { response in
         guard let listResponse = response as? [Any?] else {

@@ -20,7 +20,7 @@ import 'shader_glass.dart';
 /// the same material so a single widget works everywhere.
 ///
 /// ```dart
-/// LiquidGlassSurface(
+/// PrismGlassSurface(
 ///   style: GlassStyle.regular,
 ///   cornerRadius: 24,
 ///   child: Padding(
@@ -29,8 +29,8 @@ import 'shader_glass.dart';
 ///   ),
 /// )
 /// ```
-class LiquidGlassSurface extends StatefulWidget {
-  const LiquidGlassSurface({
+class PrismGlassSurface extends StatefulWidget {
+  const PrismGlassSurface({
     super.key,
     this.style = GlassStyle.regular,
     this.interactive = false,
@@ -58,17 +58,17 @@ class LiquidGlassSurface extends StatefulWidget {
   final Widget? child;
 
   @override
-  State<LiquidGlassSurface> createState() => _LiquidGlassSurfaceState();
+  State<PrismGlassSurface> createState() => _PrismGlassSurfaceState();
 }
 
-class _LiquidGlassSurfaceState extends State<LiquidGlassSurface> {
+class _PrismGlassSurfaceState extends State<PrismGlassSurface> {
   bool? _nativeSupported;
 
   @override
   void initState() {
     super.initState();
     if (defaultTargetPlatform == TargetPlatform.iOS) {
-      LiquidGlassHost.instance.probe().then((supported) {
+      PrismGlassHost.instance.probe().then((supported) {
         if (mounted) {
           setState(() => _nativeSupported = supported);
         }
@@ -94,7 +94,7 @@ class _LiquidGlassSurfaceState extends State<LiquidGlassSurface> {
 class _NativeGlass extends StatelessWidget {
   const _NativeGlass({super.key, required this.widget});
 
-  final LiquidGlassSurface widget;
+  final PrismGlassSurface widget;
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +112,7 @@ class _NativeGlass extends StatelessWidget {
 class _ShaderGlass extends StatefulWidget {
   const _ShaderGlass({required this.widget});
 
-  final LiquidGlassSurface widget;
+  final PrismGlassSurface widget;
 
   @override
   State<_ShaderGlass> createState() => _ShaderGlassState();
