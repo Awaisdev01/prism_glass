@@ -6,6 +6,8 @@ platforms.
 
 [![pub package](https://img.shields.io/pub/v/prism_glass.svg)](https://pub.dev/packages/prism_glass)
 
+![prism_glass fallback rendering on iOS simulator](screenshots/fallback.png)
+
 ## Why
 
 Flutter's single most-requested missing feature
