@@ -1,0 +1,61 @@
+# liquid_glass
+
+Apple's **Liquid Glass** material for Flutter — the real `UIGlassEffect` on
+iOS 26+, a fragment-shader approximation everywhere else, one widget for all
+platforms.
+
+[![pub package](https://img.shields.io/pub/v/liquid_glass.svg)](https://pub.dev/packages/liquid_glass)
+
+## Why
+
+Flutter's single most-requested missing feature
+([flutter/flutter#170310](https://github.com/flutter/flutter/issues/170310),
+700+ 👍): Cupertino has no Liquid Glass material. iOS 26 shipped it in
+UIKit (`UIGlassEffect`, `UIGlassContainerEffect`), and Flutter 3.50's stable
+native interop finally makes it practical to wrap. This package does that —
+and keeps a faithful shader fallback so your UI works everywhere.
+
+## Features
+
+- **Native Liquid Glass on iOS 26+** — hosts the system `UIGlassEffect` in a
+  platform view: real refraction, real speculars, real interactivity.
+- **Universal fallback** — an Impeller fragment shader recreates the glass
+  character (frost, rim light, micro-refraction) on Android, web, desktop,
+  and iOS < 26.
+- **Single API** — `LiquidGlassSurface` transparently picks the right path.
+- **Live control** — `GlassController` mutates style/tint/radius without
+  rebuilding.
+
+## Usage
+
+```dart
+import 'package:liquid_glass/liquid_glass.dart';
+
+LiquidGlassSurface(
+  style: GlassStyle.regular,
+  interactive: true,          // native interactive glass on iOS 26+
+  cornerRadius: 24,
+  tintColor: Colors.white24,
+  child: MyToolbar(),
+)
+```
+
+## Rebuilding shaders
+
+The fallback shader ships pre-compiled (`shaders/glass.iplr`). After editing
+`shaders/glass.frag`, run:
+
+```sh
+./tool/compile_shaders.sh
+```
+
+## Status
+
+v0.1: native regular/clear styles + interactive glass on iOS 26, shader
+fallback elsewhere. Merged glass containers (`UIGlassContainerEffect`) are
+next.
+
+## Related
+
+- [flutter/flutter#170310](https://github.com/flutter/flutter/issues/170310) —
+  the upstream feature request this package prototypes.
