@@ -1,10 +1,14 @@
-# prism_glass
+<h1 align="center">🧊 prism_glass</h1>
 
-Apple's **Liquid Glass** material for Flutter — the real `UIGlassEffect` on
-iOS 26+, a fragment-shader approximation everywhere else, one widget for all
-platforms.
+<p align="center">
+  <b>Apple's Liquid Glass material for Flutter — the real <code>UIGlassEffect</code> on iOS 26+,<br/>a fragment-shader approximation everywhere else. One widget for all platforms.</b>
+</p>
 
-[![pub package](https://img.shields.io/pub/v/prism_glass.svg)](https://pub.dev/packages/prism_glass)
+<p align="center">
+  <a href="https://pub.dev/packages/prism_glass"><img src="https://img.shields.io/pub/v/prism_glass.svg?logo=dart&logoColor=white" alt="pub.dev"></a>
+  <a href="https://github.com/Awaisdev01/prism_glass/actions"><img src="https://img.shields.io/github/actions/workflow/status/Awaisdev01/prism_glass/ci.yml?branch=main&label=CI" alt="CI"></a>
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT">
+</p>
 
 ![prism_glass fallback rendering on iOS simulator](screenshots/fallback.png)
 
