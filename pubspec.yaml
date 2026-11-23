@@ -1,9 +1,9 @@
 name: prism_glass
 description: "Apple's Liquid Glass material for Flutter — native UIGlassEffect on iOS 26+, shader fallback everywhere else."
 version: 0.1.0
-homepage: https://github.com/awaisdev5765/prism_glass
-repository: https://github.com/awaisdev5765/prism_glass
-issue_tracker: https://github.com/awaisdev5765/prism_glass/issues
+homepage: https://github.com/Awaisdev01/prism_glass
+repository: https://github.com/Awaisdev01/prism_glass
+issue_tracker: https://github.com/Awaisdev01/prism_glass/issues
 
 environment:
   sdk: ^3.14.0
